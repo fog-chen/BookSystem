@@ -200,11 +200,6 @@ export default {
     },
   },
 
-  // computed:{
-  //   lala:function(){
-  //     return this.
-  //   }
-  // },
   created () {
 
   },

@@ -73,12 +73,9 @@
           <template slot-scope="scope">
             <div>
               <p>
-                <!-- <el-button>查看</el-button>
-                <el-button>还书</el-button> -->
                 <span class="check">查看</span>
                 <span class="return" v-if="scope.row.returnDate!==''?false:true" @click="returnBook(scope.row)">还书</span>
                 <span class="check" v-else @click="remove(scope.row)">删除</span>
-                <!-- scope.row.returnDate!==''?false:true -->
               </p>
             </div>
           </template>
@@ -89,7 +86,6 @@
 </template>
 
 <script>
-// <!-- import axios from 'axios'; -->
 import { stampToDate } from '../../../common/date';
 import { borrow } from '../../../api/borrow/borrow'
 export default {
@@ -129,20 +125,15 @@ export default {
       borrow(req, res => {
         if (res.data && res.data.length) {
           this.tableData = JSON.parse(localStorage.getItem('borrowInfo')) || res.data
-          console.log('借阅')
-          console.log(JSON.parse(localStorage.getItem('borrowInfo')))
         } else {
           this.tableData = []
         }
       }, (err) => {
-        // this.logShow('获取借阅信息失败 resError:', err, 'ERROR')
+        this.logShow('获取借阅信息失败 resError:', err, 'ERROR')
       })
     },
     returnBook (val) {
       var date = Date.parse(new Date())
-      // this.tableData
-      // alert('确定还书？，当前日期是' + stampToDate(date))
-      // val.returnDate = date
       this.$confirm('当前时间为：' + stampToDate(date), '确认还书？', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

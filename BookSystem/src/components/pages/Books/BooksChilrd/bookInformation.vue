@@ -64,7 +64,6 @@
             <div>
               <p>
                 {{scope.row.noBorrow}}
-                <!-- {{scope.row.date}} -->
               </p>
             </div>
           </template>
@@ -74,7 +73,6 @@
             <div>
               <p>
                 {{scope.row.classification}}
-                <!-- {{scope.row.date}} -->
               </p>
             </div>
           </template>
@@ -83,8 +81,6 @@
           <template slot-scope="scope">
             <div>
               <p>
-                <!-- <el-button>查看</el-button>
-                <el-button>还书</el-button> -->
                 <span class="check">修改</span>
                 <span class="return" @click="deleteRow(scope.row)">删除</span>
               </p>
@@ -98,7 +94,6 @@
 
 <script>
 import { stampToDate } from '../../../common/date';
-// import { test } from '../../../common/date';
 import { Bookinformation } from '../../../api/bookinformation/bookinformation'
 import axios from 'axios';
 export default {
@@ -179,11 +174,6 @@ export default {
       }, deep: true
 
     },
-    //  bookList: {
-    //   handler () {
-    //     localStorage.setItem('data', JSON.stringify(this.bookList))
-    //   }, deep: true
-    // }
   },
   mounted () {
     this.init()
@@ -198,11 +188,6 @@ export default {
   //       console.log(error)
   //     })
 
-  // }
-  // methods: {
-  // test1: function () {
-  //   console.log(stampToDate(1546584194))
-  // }
   // }
 }
 </script>

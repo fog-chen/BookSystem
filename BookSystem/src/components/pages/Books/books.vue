@@ -20,10 +20,6 @@
     <div class="leftNav-content">
       <!-- 侧边 -->
       <div class="leftnav">
-        <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-          <el-radio-button :label="false">展开</el-radio-button>
-          <el-radio-button :label="true">收起</el-radio-button>
-        </el-radio-group> -->
         <div class="collapse" v-model="isCollapse">
           <span @click="open" v-if="isCollapse" class="state">》</span>
           <span @click="shrink" v-if="!isCollapse" class="state">《</span>
@@ -89,18 +85,6 @@ export default {
     }
   },
   methods: {
-
-    // handleCommand (logout) {
-    //   // this.$router.push('/')
-    //   // console.log("this is a test");
-    //   delCookie('name')
-    //   this.$router.push('/')
-    // },
-    // handleCommand (PersonalInfo) {
-    //   // this.$router.push('/')
-    //   // console.log("this is a test");
-    //   alert('个人信息')
-    // },
     handleCommand (command) {
       if (command === 'personalInfo') {
         alert('个人信息')
@@ -154,8 +138,6 @@ export default {
 <style scoped lang="less">
 .books {
   width: 100%;
-  // height: 100%;
-  // position: fixed;
   min-height: 100%;
   background: rgba(244, 244, 243, 0.4);
 }
@@ -167,15 +149,8 @@ export default {
   line-height: 50px;
   padding: 0 20px;
   box-sizing: border-box;
-  // background: #bababa;
   background: -webkit-gradient(linear, 0 0, 100% 100%, from(#ace), to(#f96));
-  /* justify-content: space-around; */
 }
-// .leftNav-content {
-//   width: 100%;
-//   // height: 100%;
-
-// }
 .admin {
   color: azure;
 }
@@ -183,29 +158,17 @@ export default {
   cursor: pointer;
 }
 .leftNav-content {
-  // height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-// .el-menu--collapse {
-//   width: 100%;
-// }
-// .el-row {
-//   height: 100%;
-// }
-// cc {
-//   width: 10%;
-// }
+
 .leftnav {
-  // height: 100%;
   background: #fff;
   position: relative;
   bottom: 0;
   left: 0;
   margin-right: 10px;
-  // width: @cc;
-  // float: left;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
@@ -220,23 +183,18 @@ export default {
   width: 20px;
   height: 40px;
   border-radius: 0 50% 50% 0;
-  // border-radius: 50%;
   background: #0a8;
-  // border: 1px solid #0a8;
   cursor: pointer;
   text-align: center;
   line-height: 40px;
 }
 .collapse {
   position: absolute;
-  // top: 45%;
   top: 200px;
   right: -20px;
-  // left: 100px;
   z-index: 899;
 }
 .content {
-  // height: auto !important;
   width: 100%;
   margin: 10px 0 0 20px;
   .admin;
@@ -244,7 +202,6 @@ export default {
   flex-direction: column;
   background: #fff;
   padding: 20px 0 20px 10px;
-  // overflow: hidden;
 }
 .title:hover {
   color: #615f5f;
