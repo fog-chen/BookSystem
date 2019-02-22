@@ -3,7 +3,7 @@
     <div class="without" v-show="isShow">
       <p>不好意思，可能是网不好</p>
     </div>
-    <ul class="cards" v-show="!isShow">
+    <ul class="cards" :class="{uhide:this.isShow === true}">
       <li class="card cardadd">
         <i class="el-icon-plus avatar-uploader-icon" @click="isShowBox"></i>
       </li>
@@ -41,22 +41,7 @@
       </el-form-item> -->
       <el-form-item label="分类 " prop="classification">
         <el-select v-model="form.classification " placeholder="请选择分类 " clearable>
-          <el-option label="漫画书 " value="1 "></el-option>
-          <el-option label="儿童读物 " value="2 "></el-option>
-          <el-option label="故事书 " value="3 "></el-option>
-          <el-option label="古文 " value="4 "></el-option>
-          <el-option label="哲学伦理 " value="5 "></el-option>
-          <el-option label="宗教信仰（民族神话） " value="6 "></el-option>
-          <el-option label="历史人文 " value="7 "></el-option>
-          <el-option label="艺术文学 " value="8 "></el-option>
-          <el-option label="社科图书 " value="9 "></el-option>
-          <el-option label="文学 " value="0 "></el-option>
-          <el-option label="哲学 " value="11 "></el-option>
-          <el-option label="经济 " value="12 "></el-option>
-          <el-option label="社会 " value="13 "></el-option>
-          <el-option label="科学 " value="14 "></el-option>
-          <el-option label="法律 " value="shanghai "></el-option>
-          <el-option label="军事 " value="beijing "></el-option>
+          <el-option v-for="item in bookaClassification" :key="item" :label="item " :value="item "></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="封面 " prop="cover">
@@ -100,7 +85,12 @@ export default {
       dialogVisible: false,
       showBox: false,
       imageUrl: '',
-      addressUrl: 'https://jsonplaceholder.typicode.com/posts/'
+      addressUrl: 'https://jsonplaceholder.typicode.com/posts/',
+      bookaClassification: [
+        '漫画书', '儿童读物', '故事书', '古文',
+        '哲学伦理', '宗教信仰（民族神话）',
+        '历史人文', '艺术文学', '社科图书',
+        '文学', '哲学', '经济', '社会', '科学', '法律', '军事']
     }
   },
   // created: function () {
@@ -131,14 +121,15 @@ export default {
 
     // 获取图书列表
     getBookIndex () {
-      let req = this.getParam()
+      let that = this
+      let req = that.getParam()
       BookIndex(req, (res) => {
         if (res.data && res.data.length) {
-          this.bookList = JSON.parse(localStorage.getItem('data')) || res.data,
-            this.isShow = false
+          that.bookList = JSON.parse(localStorage.getItem('data')) || res.data,
+            that.isShow = false
         } else {
           this.bookList = [],
-            this.isShow = true
+            that.isShow = true
         }
 
       }, (err) => {
@@ -185,14 +176,14 @@ export default {
             bookAutor: this.form.autor,
             classification: this.form.classification
           })
-
+          this.form.name = '',
+            this.form.autor = '',
+            this.form.cover = '',
+            this.form.classification = '',
+            this.showBox = false
         }
       })
-      this.form.name = '',
-        this.form.autor = '',
-        this.form.cover = '',
-        this.form.classification = '',
-        this.showBox = false
+
     },
     // 删除
     remove (val) {

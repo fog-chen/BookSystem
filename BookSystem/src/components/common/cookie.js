@@ -4,10 +4,8 @@ export function setCookie (c_name, value, expire) {
   var date = new Date()
   date.setSeconds(date.getSeconds() + expire)
   document.cookie = c_name + "=" + escape(value) + ";expires=" + date.toGMTString()
-  console.log(document.cookie + "cookie")
-  // console.log(expire + "expire")
-  // console.log(c_name + "c_name")
-  // console.log(value + "value")
+  // console.log(document.cookie + "cookie")
+
 }
 
 // 获取cookie

@@ -47,7 +47,7 @@
           </el-menu-item>
         </el-menu>
       </div>
-      <div class="content">
+      <div class="content main_content">
         <div>
           <el-breadcrumb separator="/">
             <el-breadcrumb-item :key="item" v-for="item in breadcrumbItems">首页/{{item}}</el-breadcrumb-item>
@@ -99,27 +99,22 @@ export default {
         case '1':
           this.$router.push('/bookIndex');
           this.breadcrumbItems = ['图书首页']
-          console.log(this.$router.push)
           break;
         case '2':
           this.$router.push('/bookInformation');
           this.breadcrumbItems = ['图书信息']
-          console.log(this.$router.push)
           break;
         case '3':
           this.$router.push('/borrowinfo');
           this.breadcrumbItems = ['借阅信息']
-          console.log(this.$router.push)
           break;
         case '4':
           this.$router.push('/userInformation');
           this.breadcrumbItems = ['用户信息']
-          console.log(this.$router.push)
           break;
         case '5':
           this.$router.push('/about');
           this.breadcrumbItems = ['关于图书']
-          console.log(this.$router.push)
           break;
       }
     },
@@ -152,7 +147,7 @@ export default {
   background: -webkit-gradient(linear, 0 0, 100% 100%, from(#ace), to(#f96));
 }
 .admin {
-  color: azure;
+  color: rgb(185, 29, 29);
 }
 .el-dropdown-link {
   cursor: pointer;
@@ -200,7 +195,7 @@ export default {
   .admin;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  // background: #fff;
   padding: 20px 0 20px 10px;
 }
 .title:hover {

@@ -1,0 +1,46 @@
+
+a:link, a:visited { text-decoration: none; }
+a:active, a:hover { text-decoration: none; }
+
+.font_14{
+  font-size: 14px;
+}
+.font_12{
+  font-size: 12px;
+}
+.uhide{
+  display: none !important;
+}
+.mar_l10{
+  margin-left: 10px
+}
+.mar_l20{
+  margin-left: 20px
+}
+.mar_l30{
+  margin-left: 30px
+}
+.mar-t10{
+  margin-top: 10px;
+}
+.mar-t20{
+  margin-top: 20px;
+}
+.mar-t30{
+  margin-top: 30px;
+}
+.mar-b10{
+  margin-bottom: 10px;
+}
+.mar-b20{
+  margin-bottom: 20px;
+}
+.mar-r10{
+  margin-right: 10px;
+}
+.mar-r20{
+  margin-right: 20px;
+}
+.mar-r30{
+  margin-right: 30px;
+}
