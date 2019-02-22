@@ -10,5 +10,5 @@
 + 这是借阅信息，操作有三种状态，查看、删除和还书，当还没有还书时，就不能删除，只能进行查看和还书两个操作，一旦还书，就可以进行删除
 操作，还书是将现在的时间赋给还书时间。
 ![image](https://github.com/fog-chen/BookSystem/blob/master/BookSystem/src/assets/read/borrowinfo.PNG)
-+ 这是用户信息页面，有一个增添用户的功能。
++ 这是用户信息页面，有一个增添用户的功能,添加用户完成，表单也是用了验证，是封装好的公用验证。
 ![image](https://github.com/fog-chen/BookSystem/blob/master/BookSystem/src/assets/read/userInformation.PNG)
