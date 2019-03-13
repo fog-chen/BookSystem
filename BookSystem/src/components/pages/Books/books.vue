@@ -24,7 +24,7 @@
           <span @click="open" v-if="isCollapse" class="state">》</span>
           <span @click="shrink" v-if="!isCollapse" class="state">《</span>
         </div>
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @select="handleSelect" :collapse="isCollapse" active-text-color="#ffd04b" :default-active="defaultUrl">
+        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @select="handleSelect" :collapse="isCollapse" :default-active="defaultUrl">
           <el-menu-item index="1">
             <i class="el-icon-location"></i>
             <span slot="title">图书首页</span>
@@ -144,13 +144,15 @@ export default {
   line-height: 50px;
   padding: 0 20px;
   box-sizing: border-box;
-  background: -webkit-gradient(linear, 0 0, 100% 100%, from(#ace), to(#f96));
+  // background: -webkit-gradient(linear, 0 0, 100% 100%, from(#ace), to(#f96));
+  background: #615f5f;
 }
 .admin {
-  color: rgb(185, 29, 29);
+  color: rgb(218, 216, 216);
 }
 .el-dropdown-link {
   cursor: pointer;
+  color: #aca5a5;
 }
 .leftNav-content {
   width: 100%;
@@ -171,14 +173,14 @@ export default {
 }
 .state {
   display: inline-block;
-  color: rgb(152, 212, 200);
+  color: rgb(241, 241, 241);
 }
 .collapse,
 .state {
   width: 20px;
   height: 40px;
   border-radius: 0 50% 50% 0;
-  background: #0a8;
+  background: #409eff;
   cursor: pointer;
   text-align: center;
   line-height: 40px;
@@ -199,6 +201,9 @@ export default {
   padding: 20px 0 20px 10px;
 }
 .title:hover {
-  color: #615f5f;
+  color: #aca5a5;
+}
+.title {
+  color: #aca5a5;
 }
 </style>

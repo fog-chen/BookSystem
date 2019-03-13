@@ -11,6 +11,12 @@ a:active, a:hover { text-decoration: none; }
 .uhide{
   display: none !important;
 }
+.ub{
+  display: flex;
+}
+.lin_34{
+  line-height: 34px;
+}
 .mar_l10{
   margin-left: 10px
 }

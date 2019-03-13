@@ -23,6 +23,6 @@ export async function Bookinformation (reqData, onSuccess, onError) {
     onSuccess(res.data, backWithReqData)
   }, (err) => {
     onError(err, backWithReqData)
-    console.log("看啊看是否失败")
+    // console.log("看啊看是否失败")
   })
 }

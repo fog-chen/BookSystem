@@ -3,6 +3,15 @@
     <div class="operation">
       <el-button type="primary" size="small" @click="addUser">添加用户</el-button>
     </div>
+    <!-- <el-form class="user_search ub">
+        <el-form-item>
+          <el-input v-model="serchUser" placeholder="用户名"></el-input>
+        </el-form-item>
+        <el-form-item class="mar_l10">
+          <el-button type="primary" @click="check">查询</el-button>
+          <el-button type="primary" @click="clear">清除</el-button>
+        </el-form-item>
+      </el-form> -->
     <div>
       <el-table :data="tableData" style="width: 100%" :default-sort="{prop: 'date', order: 'descending'}" border>
         <el-table-column prop="userName" label="用户">
@@ -149,7 +158,8 @@ export default {
       },
       showBox: false,
       deposit: '',
-      sex: ''
+      sex: '',
+      serchUser: ''
     }
   },
   methods: {
@@ -183,7 +193,9 @@ export default {
       let req = this.getParams()
       userInformation(req, res => {
         if (res.data && res.data.length) {
+
           this.tableData = JSON.parse(localStorage.getItem('userInfo')) || res.data
+          // this.tableData = res.data
         } else {
           this.tableData = []
         }
@@ -245,6 +257,17 @@ export default {
           message: '已取消操作'
         })
       })
+    },
+    // 查询根据用户名
+    check () {
+      // alert(2)
+      // console.log('eeee')
+      // this.newData = this.tableData.filter(item => item.userName == this.serchUser)
+
+    },
+    clear () {
+      this.tableData = JSON.parse(localStorage.getItem('userInfo'))
+      this.serchUser = ''
     }
 
   },
@@ -301,5 +324,8 @@ export default {
   border-radius: 5px;
   padding: 30px 10px;
   margin: auto;
+}
+.user_search {
+  justify-content: flex-start;
 }
 </style>

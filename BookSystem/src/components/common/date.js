@@ -31,5 +31,6 @@ export const stampToDate = (targetStamp) => {
   var y = new Date(longTarget).getFullYear()
   var m = new Date(longTarget).getMonth() + 1
   var d = new Date(longTarget).getDate()
-  return y + '-' + fix(m, 2) + '-' + fix(d, 2)
+  var h = new Date(longTarget).getHours()
+  return y + '-' + fix(m, 2) + '-' + fix(d, 2) + ' ' + fix(h, 2)
 }

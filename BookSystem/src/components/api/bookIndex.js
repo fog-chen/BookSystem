@@ -20,6 +20,6 @@ export async function BookIndex (reqData, onSuccess, onError) {
   }, (err) => {
     onError(err, backWithReqData)
     console.log(err)
-    console.log("看啊看是否失败")
+    // console.log("看啊看是否失败")
   })
 }
